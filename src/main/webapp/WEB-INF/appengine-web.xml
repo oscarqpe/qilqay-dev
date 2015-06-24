@@ -1,0 +1,32 @@
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+	<application>os-foro</application>
+	<version>1</version>
+	<threadsafe>true</threadsafe>
+	<!-- system-properties> <property name="java.util.logging.config.file" value="WEB-INF/classes/logging.properties" 
+		/> </system-properties -->
+	<sessions-enabled>true</sessions-enabled>
+	<static-files>
+		<include path="/**.js" expiration="7d" />
+		<include path="/**.svg" expiration="7d" />
+		<include path="/**.woff" expiration="7d" />
+		<include path="/**.ttf" expiration="7d" />
+		<include path="/**.eot" expiration="7d" />
+		<include path="/**.png" expiration="7d" />
+		<include path="/**.gif" expiration="7d" />
+		<include path="/**.jpg" expiration="7d" />
+		<include path="/**.jpeg" expiration="7d" />
+		<include path="/**.css" expiration="7d" />
+		<include path="/**.ico" expiration="7d" />
+		<include path="/**.xml" expiration="7d" />
+		<include path="/**.txt" expiration="7d" />
+		<include path="/**.html" expiration="1d" />
+	</static-files>
+	<!-- <resource-files> <include path="/error.html" /> </resource-files> <static-error-handlers> 
+		<handler file="error.html" /> </static-error-handlers> -->
+	<admin-console>
+		<page name="Appstats" url="/appstats" />
+	</admin-console>
+	<inbound-services>
+		<service>xmpp_message</service>
+	</inbound-services>
+</appengine-web-app>
