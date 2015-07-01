@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 
 import com.googlecode.objectify.ObjectifyService;
 import com.os.foro.entity.ComentarioDto;
+import com.os.foro.entity.RatingDto;
 import com.os.foro.entity.TemaComentarioDto;
 import com.os.foro.entity.TemaDto;
 import com.os.foro.entity.UsuarioDto;
@@ -23,7 +24,7 @@ public class InitServlet extends HttpServlet {
         ObjectifyService.register(TemaDto.class);
         ObjectifyService.register(ComentarioDto.class);
         ObjectifyService.register(TemaComentarioDto.class);
-
+        ObjectifyService.register(RatingDto.class);
         //ConfigUtil config = ConfigUtil.getInstance();
         //config.copyPropertiesIntoDatastore(true);
 

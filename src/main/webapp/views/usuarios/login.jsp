@@ -80,16 +80,16 @@
 											<div class="space-6"></div>
 
 											<div class="social-login center">
-												<a class="btn btn-primary">
-													<i class="ace-icon fa fa-facebook"></i>
+												<!--a class="btn btn-primary">
+													<i class="ace-icon fa fa-facebook" style="margin-top: 10px;"></i>
 												</a>
 
 												<a class="btn btn-info">
-													<i class="ace-icon fa fa-twitter"></i>
-												</a>
+													<i class="ace-icon fa fa-twitter" style="margin-top: 10px;"></i>
+												</a-->
 
 												<a class="btn btn-danger">
-													<i class="ace-icon fa fa-google-plus"></i>
+													<i class="ace-icon fa fa-google-plus" style="margin-top: 10px;"></i>
 												</a>
 											</div>
 										</div><!-- /.widget-main -->

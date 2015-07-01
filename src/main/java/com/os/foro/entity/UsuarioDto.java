@@ -20,6 +20,8 @@ public class UsuarioDto {
 	private GroupUserType userType;
 	@Index
 	private String email;
+	@Index
+	private String picture;
 	@Index 
 	private Boolean agreement;
 	
@@ -62,6 +64,12 @@ public class UsuarioDto {
 	}
 	public void setAgreement(Boolean agreement) {
 		this.agreement = agreement;
+	}
+	public String getPicture() {
+		return picture;
+	}
+	public void setPicture(String picture) {
+		this.picture = picture;
 	}
 	@Override
 	public String toString() {

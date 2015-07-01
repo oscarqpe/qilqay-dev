@@ -1,13 +1,17 @@
 package com.os.foro.entity;
 
+import static com.googlecode.objectify.ObjectifyService.ofy;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Ref;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
+import com.googlecode.objectify.annotation.Ignore;
 import com.googlecode.objectify.annotation.Index;
-import com.os.foro.entity.ComentarioDto;
+import com.googlecode.objectify.annotation.OnLoad;
 /**
  * 
  * @author OscarEdmit
@@ -23,7 +27,16 @@ public class TemaDto {
 	private String contenido;
 	@Index
 	private List<Ref<ComentarioDto>> comentarios;
+	@Index
+	private double rate;
+	@Ignore
+	private Integer votos;
 	
+	@OnLoad
+    public void getRefs() {
+		this.votos = ofy().load().type(RatingDto.class)
+				.ancestor(Key.create(this)).list().size();
+	}
 	
 	public TemaDto() {
 		super();
@@ -67,6 +80,20 @@ public class TemaDto {
         }
         this.comentarios = comentarios;
     }
+    
+	public double getRate() {
+		return rate;
+	}
+	public void setRate(double rate) {
+		this.rate = rate;
+	}
+	
+	public Integer getVotos() {
+		return votos;
+	}
+	public void setVotos(Integer votos) {
+		this.votos = votos;
+	}
 	@Override
 	public String toString() {
 		return "TemaDto [id=" + id + ", titulo=" + titulo + ", contenido="

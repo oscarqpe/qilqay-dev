@@ -11,13 +11,13 @@
 	<display-name>OS Foro Application</display-name>
 	<!-- Filters -->
 	<filter>
-        <filter-name>IndexFilter</filter-name>
-        <filter-class>com.os.foro.filter.IndexFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>IndexFilter</filter-name>
-        <url-pattern>/index.jsp</url-pattern>
-    </filter-mapping>
+		<filter-name>IndexFilter</filter-name>
+		<filter-class>com.os.foro.filter.IndexFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>IndexFilter</filter-name>
+		<url-pattern>/index.jsp</url-pattern>
+	</filter-mapping>
 	<!-- Servlets -->
 	<servlet>
 		<servlet-name>ForoInicio</servlet-name>
@@ -50,6 +50,14 @@
 	<servlet-mapping>
 		<servlet-name>Temas</servlet-name>
 		<url-pattern>/temas</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Vote</servlet-name>
+		<servlet-class>com.os.foro.servlets.VoteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Vote</servlet-name>
+		<url-pattern>/vote</url-pattern>
 	</servlet-mapping>
 	<!-- LOGIN SERVLET -->
 	<servlet>
@@ -84,6 +92,20 @@
 		<servlet-name>Retrieve</servlet-name>
 		<url-pattern>/retrieve</url-pattern>
 	</servlet-mapping>
+	<!-- filter>
+		<filter-name>SessionFilter</filter-name>
+		<filter-class>
+			com.os.foro.filter.SessionFilter
+		</filter-class>
+		<init-param>
+			<param-name>avoid-urls</param-name>
+			<param-value>index.jsp</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>SessionFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping-->
 	<!-- OFY FILTER TO CLEAR OFY CACHE -->
 	<filter>
 		<filter-name>ObjectifyFilter</filter-name>
@@ -104,14 +126,7 @@
 		<url-pattern>/init</url-pattern>
 	</servlet-mapping>
 	<!-- TILES -->
-	<servlet>
-		<servlet-name>tiles</servlet-name>
-		<servlet-class>org.apache.tiles.web.startup.simple.SimpleTilesInitializerServlet</servlet-class>
-		<init-param>
-			<param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
-			<param-value>/WEB-INF/tiles.xml</param-value>
-		</init-param>
-		<load-on-startup>2</load-on-startup>
-	</servlet>
-
+	<listener>
+		<listener-class>com.os.foro.tilesFactory.TestTilesListener</listener-class>
+	</listener>
 </web-app>
