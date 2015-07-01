@@ -22,6 +22,9 @@ public class Helper {
     public static final String USER_LOGGED_TYPE = "USER_LOGGED_TYPE";
     public static final String USER_LOGGED_USERNAME = "USER_LOGGED_USERNAME";
     public static final String USER_LOGGED = "USER_LOGGED";
+    
+    public static final String VALID_GOOGLE_USER = "VALID_GOOGLE_USER";
+    
     public static final String LOGIN_PAGE = "/login";
     
     public static void clearSession(HttpSession p_session) {

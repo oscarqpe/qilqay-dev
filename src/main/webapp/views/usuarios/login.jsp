@@ -88,7 +88,7 @@
 													<i class="ace-icon fa fa-twitter" style="margin-top: 10px;"></i>
 												</a-->
 
-												<a class="btn btn-danger">
+												<a href="/googleapi/connect" class="btn btn-danger">
 													<i class="ace-icon fa fa-google-plus" style="margin-top: 10px;"></i>
 												</a>
 											</div>

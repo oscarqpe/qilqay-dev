@@ -92,6 +92,23 @@
 		<servlet-name>Retrieve</servlet-name>
 		<url-pattern>/retrieve</url-pattern>
 	</servlet-mapping>
+	<!-- Servlet Login Oauth2 -->
+    <servlet>
+        <servlet-name>GPLusConnect</servlet-name>
+        <servlet-class>com.os.foro.gplus.oauth.GPlusAuthCodeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GPlusOauth2callback</servlet-name>
+        <servlet-class>com.os.foro.gplus.oauth.GPlusCallbackServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GPLusConnect</servlet-name>
+        <url-pattern>/googleapi/connect</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GPlusOauth2callback</servlet-name>
+        <url-pattern>/googleapi/oauth2callback</url-pattern>
+    </servlet-mapping>
 	<!-- filter>
 		<filter-name>SessionFilter</filter-name>
 		<filter-class>

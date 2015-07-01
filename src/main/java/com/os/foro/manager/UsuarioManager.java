@@ -34,4 +34,8 @@ public class UsuarioManager {
 		UsuarioDto usuario = query.filter("username", username).filter("password", OsUtil.getSecurePassword(password)).first().now();
 		return usuario;
 	}
+	public UsuarioDto getUserByEmail(String email) {
+		UsuarioDto usuario = query.filter("email", email).first().now();
+		return usuario;
+	}
 }

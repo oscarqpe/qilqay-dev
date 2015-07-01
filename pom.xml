@@ -7,6 +7,13 @@
 	<version>1.0</version>
 	<name>foro-web Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<appengine.target.version>1.9.1</appengine.target.version>
+		<appengine.maven.plugin.version>1.9.1</appengine.maven.plugin.version>
+		<jersey.version>1.15</jersey.version>
+		<gapi.version>1.15.0-rc</gapi.version>
+	</properties>
 	<repositories>
 		<repository>
 			<id>objectify-appengine</id>
@@ -91,7 +98,27 @@
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>1.5.8</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.google.oauth-client</groupId>
+			<artifactId>google-oauth-client-appengine</artifactId>
+			<version>${gapi.version}</version>
+		</dependency>
+		<!-- for oauth connection> -->
+		<dependency>
+			<groupId>com.google.http-client</groupId>
+			<artifactId>google-http-client-gson</artifactId>
+			<version>${gapi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.apis</groupId>
+			<artifactId>google-api-services-plusDomains</artifactId>
+			<version>v1-rev7-1.17.0-rc</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.apis</groupId>
+			<artifactId>google-api-services-oauth2</artifactId>
+			<version>v2-rev37-${gapi.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>os-foro</finalName>
@@ -101,6 +128,37 @@
 				<artifactId>appengine-maven-plugin</artifactId>
 				<version>1.9.1</version>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>1.2</version>
+				<executions>
+					<execution>
+						<id>enforce-property-ev</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireProperty>
+									<property>ev</property>
+									<message>[ERROR] You must set a resource folder (-Dev=local)
+										property!</message>
+								</requireProperty>
+							</rules>
+							<fail>true</fail>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>src/main/resources/config/${ev}</directory>
+			</resource>
+		</resources>
 	</build>
 </project>

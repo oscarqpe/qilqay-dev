@@ -1,5 +1,8 @@
 package com.os.foro.entity;
 
+import java.io.Serializable;
+import java.util.Date;
+
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 import com.googlecode.objectify.annotation.Index;
@@ -9,13 +12,19 @@ import com.googlecode.objectify.annotation.Index;
  *
  */
 @Entity
-public class UsuarioDto {
+public class UsuarioDto implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	private Long id;
 	@Index
 	private String username;
 	@Index
 	private String password;
+	@Index
+	private String nombres;
 	@Index
 	private GroupUserType userType;
 	@Index
@@ -24,6 +33,14 @@ public class UsuarioDto {
 	private String picture;
 	@Index 
 	private Boolean agreement;
+	@Index
+	private String accessToken;
+	@Index
+	private String refreshToken;
+	@Index
+	private Date expires;
+	@Index
+	private Long expiresInSecs;
 	
 	public UsuarioDto() {
 		super();
@@ -70,6 +87,36 @@ public class UsuarioDto {
 	}
 	public void setPicture(String picture) {
 		this.picture = picture;
+	}
+	public String getAccessToken() {
+		return accessToken;
+	}
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
+	}
+	public String getRefreshToken() {
+		return refreshToken;
+	}
+	public void setRefreshToken(String refreshToken) {
+		this.refreshToken = refreshToken;
+	}
+	public String getNombres() {
+		return nombres;
+	}
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
+	}
+	public Date getExpires() {
+		return expires;
+	}
+	public void setExpires(Date expires) {
+		this.expires = expires;
+	}
+	public Long getExpiresInSecs() {
+		return expiresInSecs;
+	}
+	public void setExpiresInSecs(Long expiresInSecs) {
+		this.expiresInSecs = expiresInSecs;
 	}
 	@Override
 	public String toString() {

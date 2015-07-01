@@ -55,7 +55,7 @@ public class RegisterServlet extends HttpServlet {
 			session.setAttribute(Helper.USER_LOGGED_EMAIL, usuario.getEmail());
 			session.setAttribute(Helper.USER_LOGGED_USERNAME, usuario.getUsername());
 			session.setAttribute(Helper.USER_LOGGED_TYPE, usuario.getUserType());
-			request.getRequestDispatcher("views/temas/temas.jsp").forward(request, response);
+			response.sendRedirect("/temas");
 		}
 		request.setAttribute("Success", true);
 		request.setAttribute("Message", "Registro incorrecto");

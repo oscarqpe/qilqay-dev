@@ -52,7 +52,7 @@
 				    <li>
 				        <!-- timeline icon -->
 				        <i class="timeline-img">
-				        	<img src="/imagenes/avatars/avatar1.png" />
+				        	<img src="${comentario.comentarioRef.usuarioRef.picture}" />
 				        </i>
 				        <div class="timeline-item">
 				        	<fmt:formatDate value="${comentario.fecha}" var="formattedDate" 
