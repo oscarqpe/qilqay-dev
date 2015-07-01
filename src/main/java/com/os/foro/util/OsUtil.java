@@ -2,7 +2,11 @@ package com.os.foro.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
+/**
+ * 
+ * @author OscarEdmit
+ *
+ */
 public class OsUtil {
 	private static final String saltoPassword = "PASSWORD";
 	public static String getSecurePassword(String passwordToHash) {

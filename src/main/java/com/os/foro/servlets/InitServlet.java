@@ -11,7 +11,11 @@ import com.os.foro.entity.RatingDto;
 import com.os.foro.entity.TemaComentarioDto;
 import com.os.foro.entity.TemaDto;
 import com.os.foro.entity.UsuarioDto;
-
+/**
+ * 
+ * @author OscarEdmit
+ *
+ */
 public class InitServlet extends HttpServlet {
 
     private static final long serialVersionUID = 7003530042096811840L;

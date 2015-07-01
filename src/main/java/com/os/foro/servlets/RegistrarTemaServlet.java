@@ -13,7 +13,11 @@ import org.apache.tiles.access.TilesAccess;
 import com.os.foro.entity.TemaDto;
 import com.os.foro.helper.Helper;
 import com.os.foro.manager.TemaManager;
-
+/**
+ * 
+ * @author OscarEdmit
+ *
+ */
 public class RegistrarTemaServlet extends HttpServlet {
 
 	/**

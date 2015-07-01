@@ -38,10 +38,10 @@ import com.os.foro.util.CloudSqlException;
 import com.os.foro.util.OsUtil;
 
 import java.util.Date;
-
 /**
+ * 
+ * @author OscarEdmit
  *
- * @author dgparedes
  */
 public class GPlusCallbackServlet extends HttpServlet {
 

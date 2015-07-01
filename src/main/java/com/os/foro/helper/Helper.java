@@ -14,7 +14,11 @@ import javax.servlet.http.HttpSession;
 
 import com.os.foro.filter.IndexFilter;
 import com.os.foro.util.OsUtil;
-
+/**
+ * 
+ * @author OscarEdmit
+ *
+ */
 public class Helper {
 	protected static final Logger LOGGER = Logger.getLogger(Helper.class.getName());
 	public static final String USER_LOGGED_EMAIL = "USER_LOGGED_EMAIL";

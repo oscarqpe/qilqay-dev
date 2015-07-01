@@ -16,7 +16,7 @@ import com.os.foro.entity.TemaDto;
 
 /**
  * 
- * @author ronald, oscar
+ * @author OscarEdmit
  *
  */
 public class TemaManager {
